@@ -11,3 +11,17 @@ app.get("/", function (req, res) {
 });
 
 app.listen(PORT, () => log("Server is starting on PORT,", 8080));
+
+// Configuring our data parsing
+app.use(
+  express.urlencoded({
+    extended: false,
+  })
+);
+app.use(express.json());
+
+app.post("/email", (req, res) => {
+  //Send an email here but currently dummy email
+  console.log("Data:", req.body);
+  res.json({ message: "Message received!" });
+});
