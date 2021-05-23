@@ -1,11 +1,11 @@
 const express = require("express");
+const app = express();
 
 const log = console.log;
-const app = express();
-const path = required("path");
+const path = require("path");
 const PORT = 8080;
 
-router.get("/", function (req, res) {
+app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "views", "index.html"));
   //__dirname : It will resolve to your project folder.
 });
